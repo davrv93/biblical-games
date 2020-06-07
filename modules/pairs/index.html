@@ -1,0 +1,87 @@
+<html>
+<header>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</header>
+<body ng-app="myApp" >
+
+
+	<div ng-controller="myCtrl" class="modal-demo">
+
+		
+		  <section class="feature_area p_120" id="feature">
+        	<div class="container">
+        		<div >
+        			<br>
+        			<h2 class="title">Memorama bíblico: Padre y Primogénito       </h2>
+        			<!-- {{options.score}}-->
+        			<div ng-if="!options.start">
+    					<div class=""  >
+	        				<div class="instructions" >
+	        					<h3 >Instrucciones:</h3><br>
+			        			<h4>Al hacer clic en comenzar juego aparecerá un grupo de tarjetas.<br>
+			        			<h4>Cada tarjeta contiene un nombre bíblico, se debe hacer clic en cada tarjeta<br>
+			        			<h4>y emparejar al padre e hijo primogénito. El objetivo es emparejar todas las tarjetas</h4><br>
+	        				</div>
+        				</div>                    			
+        			</div>
+        		</div>
+        		<br>
+        		<div class="feature_inner row container_option" style="text-align: center">
+        			<button type="button" class="btn btn-dark" ng-click="options.start=true" ng-if="options.start==false" >Comenzar juego</button>
+        		</div>
+        		<div class="feature_inner row flip" ng-if="options.start == true" >
+                    <!--
+        			<div class="col-lg-3 col-md-6 card " ng-if="!x.solved" ng-repeat="x in data  " ng-class="{'flipped':x.isFlipped}" ng-click="x.isFlipped=!x.isFlipped; "  >-->
+
+                    <div class="col-lg-2 col-md-6 col-xs-5 card  " ng-if="!x.solved" ng-repeat="x in data  " ng-class="{'flipped':x.isFlipped}" >
+                    
+        				<div class="feature_item face front" ng-click=" add(x);"  ng-if="!x.isFlipped" style="min-height: 140px" ng-disabled="x.disabled" >
+        					Clic para ver <br>
+        					
+        				</div>
+        				<div class="feature_item face back"   ng-if="x.isFlipped" ng-disabled="x.disabled"  style="min-height: 140px">
+        					{{x.value}}
+        				</div>
+        			</div>                    
+
+        		</div>
+        	</div>
+        </section>
+        <br>
+        <h2 class="title">Puntaje: {{options.score}}    </h2>
+		<div class="feature_inner row container_option" style="text-align: center">
+        	<button type="button" class="btn btn-dark" ng-click="restart()" ng-if="options.start==true" >Reiniciar juego</button>
+        </div>
+        
+         <!--<button type="button" class="btn btn-default" ng-click="openComponentModal()">Open me!</button>-->
+         <script type="text/ng-template" id="myModalContent.html">
+	        <div class="modal-header">
+	            <h3 class="modal-title" id="modal-title">¡Felicidades!</h3>
+	        </div>
+	        <div class="modal-body" id="modal-body">
+	          	¡Muy bien, lo lograste! <br>
+	          	<span>  y   eran Padre y primogénito.
+	            
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">CONTINUAR</button>
+	            
+	        </div>
+    </script>
+		
+
+	</div>
+
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+
+	<!--
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
+	<script src="controllers/index.js"></script>
+	
+</body>
+</html>

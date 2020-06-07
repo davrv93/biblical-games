@@ -1,0 +1,43 @@
+{
+  "name": "pairs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "angular": "^1.7.9",
+    "angular-animate": "^1.7.9",
+    "angular-aria": "^1.7.9",
+    "angular-filter": "^0.5.17",
+    "angular-local-storage": "^0.7.1",
+    "angular-messages": "^1.7.9",
+    "angular-resource": "^1.7.9",
+    "angular-touch": "^1.7.9",
+    "angular-ui-bootstrap": "^2.5.6",
+    "browser-sync": "^2.18.2",
+    "del": "^5.1.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^2.3.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-filter": "^5.1.0",
+    "gulp-header": "^1.8.8",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-jsonminify": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-string-replace": "^1.1.2",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.11.1",
+    "oclazyload": "^1.1.0"
+  }
+}
